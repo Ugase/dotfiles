@@ -23,7 +23,7 @@ autoload -U compinit && compinit
 
 zinit cdreplay -q
 
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/omp/config.toml)"
 
 # Keybinds
 bindkey -e
