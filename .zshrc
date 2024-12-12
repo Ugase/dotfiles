@@ -6,9 +6,6 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Powerlevel10k (change soon)
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
 # zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
