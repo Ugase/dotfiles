@@ -62,3 +62,6 @@ alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 # Shell integration
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Source some functions
+source ~/functions/*
