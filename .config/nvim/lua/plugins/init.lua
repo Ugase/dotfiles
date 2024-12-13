@@ -84,5 +84,9 @@ return {
     config = function()
       require("configs.noice")
     end
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   }
 }

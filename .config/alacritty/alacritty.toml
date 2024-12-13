@@ -15,7 +15,7 @@ import = ["/home/denzel/.config/alacritty/themes/themes/tokyo_night_storm.toml"]
 hide_when_typing = true
 
 [terminal.shell]
-program = "/usr/bin/zsh"
+program = "/usr/bin/tmux"
 
 [window]
 blur = true
@@ -32,3 +32,6 @@ lines = 31
 [window.padding]
 x = 0
 y = 0
+
+[env]
+TERM = "xterm-256color"
