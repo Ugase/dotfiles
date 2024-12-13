@@ -17,6 +17,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::man
 
 # Load completions
 autoload -U compinit && compinit
@@ -24,6 +25,8 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/config.toml)"
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Keybinds
 bindkey -e
@@ -53,7 +56,9 @@ alias ls="eza -a --group-directories-first"
 alias cls='clear'
 alias c='clear'
 alias nv='nvim'
+alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
+alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 
-# fzf Shell integration
+# Shell integration
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
