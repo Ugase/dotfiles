@@ -10,7 +10,7 @@ then
   then
     git push origin master
   else
-    printf "\033[31mWarning: no internet connection avalible\033[0m"
+    printf "\033[33mWarning: no internet connection avalible\n\033[0m"
   fi
 else
   printf "nothing to do\n"
