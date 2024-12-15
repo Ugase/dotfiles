@@ -20,7 +20,7 @@ then
 else
   if [[ -n "$(git status --short)" ]]
   then
-    FILE_PATH="$HOME/dotfiles/logs/$(date +%s).log"
+    FILE_PATH="$HOME/logs/$(date +%s).log"
     touch "${FILE_PATH}"
     ping -c 1 github.com >> "${FILE_PATH}"
     INTERNET=$?
