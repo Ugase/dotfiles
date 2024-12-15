@@ -32,7 +32,7 @@ else
     
     if [[ $INTERNET -eq 0 ]]
     then
-      git push origin master >> $FILE_PATH
+      git push origin master >> $FILE_PATH 2>&1
     else
       printf "\033[33mWarning: no internet connection avalible\n\033[0m" >> $FILE_PATH
     fi
