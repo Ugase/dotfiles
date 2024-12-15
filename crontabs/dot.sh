@@ -9,3 +9,4 @@ then
   git push origin master
 else
   printf "\033[31mNo Internet\033[0m"
+fi
