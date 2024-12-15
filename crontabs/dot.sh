@@ -2,7 +2,7 @@ if [[ -n "$(git status --short)" ]]
 then
   ping -c 1 github.com
   INTERNET=$?
-  cd dotfiles
+  cd ~/dotfiles
   stow --adopt --no-folding .
   git add . && git commit -m "$(git status --short)"
   
