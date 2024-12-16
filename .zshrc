@@ -59,6 +59,7 @@ alias c='clear'
 alias nv='nvim'
 alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
 alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
 # Shell integration
 eval "$(fzf --zsh)"
