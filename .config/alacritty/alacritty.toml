@@ -15,7 +15,7 @@ import = ["/home/denzel/.config/alacritty/themes/themes/tokyo_night.toml"]
 hide_when_typing = true
 
 [terminal.shell]
-program = "/usr/bin/zsh"
+program = "/usr/bin/tmux"
 
 [window]
 # blur = true
