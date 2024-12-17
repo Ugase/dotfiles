@@ -1,1 +1,0 @@
-../../../../dotfiles/.config/nvim/lua/configs/noice.lua
