@@ -18,9 +18,9 @@ require("lualine").setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "filetype" },
-    lualine_c = { "diagnostics" },
+    lualine_c = { "filename", "diagnostics" },
     lualine_x = { "os.date('%I:%M:%S %p')" },
-    lualine_y = { "filename" },
+    lualine_y = { "branch" },
     lualine_z = { "progress" },
   },
   inactive_sections = {
