@@ -9,3 +9,5 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
 map("n", "<leader>th", "<cmd> Themery<CR>")
+map("n", "<C-n>", "<cmd> NvimTreeToggle<CR>")
+map("n", "<leader>e", "<cmd> NvimTreeFocus<CR>")
