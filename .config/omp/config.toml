@@ -26,6 +26,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
         branch_icon = ''
         commit_icon = '@'
         fetch_status = true
+      [[blocks.segments]]
+          type = "python"
+          style = "plain"
+          background = "transparent"
+          foreground = "#ffe873"
+          template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
 
 [[blocks]]
   type = 'rprompt'
