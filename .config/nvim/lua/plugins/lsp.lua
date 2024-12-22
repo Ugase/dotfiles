@@ -23,7 +23,9 @@ return {
                 "ruff-lsp",
                 "mypy",
                 "lua-language-server",
-                "styla"
+                "styla",
+                "clang-format",
+                "clangd",
             }
         },
         config = function()

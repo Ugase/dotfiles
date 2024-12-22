@@ -1,8 +1,8 @@
 return {
     "folke/snacks.nvim",
-    lazy = true,
+    -- lazy = true,
     priority = 1000,
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     ---@type snacks.Config
     opts = {
         bigfile = { enabled = true },
@@ -10,5 +10,7 @@ return {
         quickfile = { enabled = true },
         scroll = { enabled = true },
         animate = { enabled = true },
+        -- dashboard = { enabled = true },
+        -- indent = { enabled = true }
     },
 }

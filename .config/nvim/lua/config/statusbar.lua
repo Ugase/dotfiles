@@ -1,7 +1,7 @@
 require("lualine").setup({
     options = {
         icons_enabled = true,
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         theme = "auto",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },

@@ -9,12 +9,12 @@ return {
             require("mini.icons").setup()
         end
     },
-    {
-        "echasnovski/mini.starter",
-        config = function()
-            require("mini.starter").setup()
-        end
-    },
+    -- {
+    -- "echasnovski/mini.starter",
+    -- config = function()
+    -- require("mini.starter").setup()
+    -- end
+    -- },
     {
         "echasnovski/mini.pairs",
         lazy = true,

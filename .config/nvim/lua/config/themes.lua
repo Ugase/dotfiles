@@ -1,4 +1,8 @@
 return {
     "folke/tokyonight.nvim",
-    "catppuccin/nvim"
+    "catppuccin/nvim",
+    {
+        "samharju/synthweave.nvim",
+        branch = "master"
+    }
 }
