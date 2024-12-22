@@ -60,8 +60,8 @@ alias nv='nvim'
 alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
 alias edit_nvim="PREV_PWD=$PWD && cd ~/.config/nvim && nvim && cd $PREV_PWD"
 alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
-alias vn="fd --type f --hidden --exclude .git | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
-alias v="fd --type f --hidden --exclude .git | fzf-tmux -w 60% -h 60% -p --reverse"
+alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
+alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "
 
 # Shell integration
 eval "$(fzf --zsh)"
