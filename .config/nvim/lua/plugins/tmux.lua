@@ -2,6 +2,7 @@ return {
     {
         "christopher-francisco/tmux-status.nvim",
         lazy = true,
+        event = "VeryLazy",
         opts = {},
     },
     {
