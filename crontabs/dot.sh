@@ -1,6 +1,6 @@
 if [[ $1 != "--debug" ]]; then
   if [[ -n "$(git status --short)" ]]; then
-    ping -c 1 github.com
+    ping -c 1 github.com > /dev/null 2>&1
     INTERNET=$?
     cd ~/dotfiles
     stow --adopt --no-folding .

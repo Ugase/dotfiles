@@ -23,12 +23,11 @@ return {
             require("mini.pairs").setup()
         end
     },
-    {
-        "echasnovski/mini.indentscope",
-        lazy = true,
-        event = "BufReadPre",
-        config = function()
-            require("mini.indentscope").setup()
-        end
-    }
+    -- {
+    --     "echasnovski/mini.indentscope",
+    -- lazy = true,
+    -- event = "BufReadPre",
+    -- config = function()
+    -- require("mini.indentscope").setup()
+    -- end
 }

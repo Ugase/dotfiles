@@ -11,6 +11,6 @@ return {
         scroll = { enabled = true },
         animate = { enabled = true },
         -- dashboard = { enabled = true },
-        -- indent = { enabled = true }
+        indent = { enabled = true }
     },
 }
