@@ -1,6 +1,6 @@
 return {
     {
-        'lmantw/themify.nvim',
+        'LmanTW/themify.nvim',
         lazy = false,
         priority = 999,
     },

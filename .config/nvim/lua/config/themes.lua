@@ -5,9 +5,5 @@ return {
         "samharju/synthweave.nvim",
         branch = "master"
     },
-    {
-        "loctvl842/monokai-pro.nvim",
-        branch = "master"
-    },
-    "projekt0n/github-nvim-theme"
+    "projekt0n/github-nvim-theme",
 }
