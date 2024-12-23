@@ -12,8 +12,8 @@ mkcd(){
 ipypkg(){
     ping -c 1 pypi.org > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
-        printf "\033[1;3;31mfatal: No internet\nError Code: $?\033[0m\n"
-        exit 1
+        printf "\033[1;3;31mfatal: No internet\033[0m\n"
+        return 1
     fi
     pacman -Ss python- | grep "python-$1"
     AVALIABLE_ON_ARCH_REPO=$?
