@@ -48,9 +48,20 @@ return {
             },
             "diagnostics",
           },
-          lualine_x = { "os.date('%I:%M %p')" },
-          lualine_y = { "branch" },
-          lualine_z = { "progress" },
+          lualine_x = {
+            "os.date('%I:%M %p')",
+            {
+              require("tmux-status").tmux_session,
+              cond = require("tmux-status").show,
+              padding = { left = 1, right = 1 },
+            },
+          },
+          lualine_y = {
+            "branch",
+          },
+          lualine_z = {
+            "progress",
+          },
         },
         inactive_sections = {
           lualine_a = {},

@@ -1,23 +1,14 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    lsp = {
-      -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-      override = {
-        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-        ["vim.lsp.util.stylize_markdown"] = true,
-      },
-    },
-    presets = {
-      bottom_search = true, -- use a classic bottom cmdline for search
-      long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false, -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = true, -- add a border to hover docs and signature help
-    },
-  },
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+  {
+    "echasnovski/mini.starter",
+    version = false,
+    event = "VimEnter",
+    config = function()
+      require("mini.starter").setup({
+        query_updaters = "",
+        footer = "",
+        header = "\n                              iii             \nnn nnn    eee   oooo  vv   vv     mm mm mmmm  \nnnn  nn ee   e oo  oo  vv vv  iii mmm  mm  mm \nnn   nn eeeee  oo  oo   vvv   iii mmm  mm  mm \nnn   nn  eeeee  oooo     v    iii mmm  mm  mm \n",
+      })
+    end,
   },
 }
