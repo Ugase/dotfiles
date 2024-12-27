@@ -7,7 +7,7 @@ return {
       require("mini.starter").setup({
         query_updaters = "",
         footer = "",
-        header = "\n                              iii             \nnn nnn    eee   oooo  vv   vv     mm mm mmmm  \nnnn  nn ee   e oo  oo  vv vv  iii mmm  mm  mm \nnn   nn eeeee  oo  oo   vvv   iii mmm  mm  mm \nnn   nn  eeeee  oooo     v    iii mmm  mm  mm \n",
+        header = "\n                                    oo            \n                                                  \n88d888b. .d8888b. .d8888b. dP   .dP dP 88d8b.d8b. \n88'  `88 88ooood8 88'  `88 88   d8' 88 88'`88'`88 \n88    88 88.  ... 88.  .88 88 .88'  88 88  88  88 \ndP    dP `88888P' `88888P' 8888P'   dP dP  dP  dP \n                                                  \n",
       })
     end,
   },
