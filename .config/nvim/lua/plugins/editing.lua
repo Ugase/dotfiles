@@ -51,7 +51,7 @@ return {
           lualine_x = {
             "os.date('%I:%M %p')",
             {
-              require("tmux-status").tmux_session,
+              require("tmux-status").tmux_windows,
               cond = require("tmux-status").show,
               padding = { left = 1, right = 1 },
             },

@@ -1,6 +1,6 @@
 return {
-  "folke/tokyonight.nvim",
+  "lmantw/themify.nvim",
   lazy = false,
-  priority = 1000,
-  opts = {},
+  priority = 999,
+  config = { "folke/tokyonight.nvim" },
 }
