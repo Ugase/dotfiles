@@ -11,7 +11,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-
 # omz plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -58,7 +57,7 @@ alias cls='clear'
 alias c='clear'
 alias nv='nvim'
 alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
-alias edit_nvim="PREV_PWD="$(pwd)" && cd ~/.config/nvim && nvim && cd $PREV_PWD"
+alias edit_nvim="PREV_PWD=\"$(pwd)\" && cd ~/.config/nvim && nvim && cd $PREV_PWD"
 alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
 alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "

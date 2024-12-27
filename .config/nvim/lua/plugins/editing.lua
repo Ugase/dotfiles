@@ -1,65 +1,67 @@
 return {
-    {
-        "folke/trouble.nvim",
-        opts = {}, -- for default options, refer to the configuration section for custom setup.
-        cmd = "Trouble",
-        keys = {
-            {
-                "<leader>xx",
-                "<cmd>Trouble diagnostics toggle<cr>",
-                desc = "Diagnostics (Trouble)",
-            },
-            {
-                "<leader>xX",
-                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-                desc = "Buffer Diagnostics (Trouble)",
-            },
-            {
-                "<leader>cs",
-                "<cmd>Trouble symbols toggle focus=false<cr>",
-                desc = "Symbols (Trouble)",
-            },
-            {
-                "<leader>cl",
-                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-                desc = "LSP Definitions / references / ... (Trouble)",
-            },
-            {
-                "<leader>xL",
-                "<cmd>Trouble loclist toggle<cr>",
-                desc = "Location List (Trouble)",
-            },
-            {
-                "<leader>xQ",
-                "<cmd>Trouble qflist toggle<cr>",
-                desc = "Quickfix List (Trouble)",
-            },
+  {
+    "echasnovski/mini.pairs",
+    version = false,
+    event = "BufReadPre",
+    config = function()
+      require("mini.pairs").setup()
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    opts = function()
+      require("lualine").setup({
+        options = {
+          icons_enabled = true,
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
+          theme = "auto",
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+          ignore_focus = {},
+          always_divide_middle = false,
+          always_show_tabline = true,
+          globalstatus = true,
+          refresh = {
+            statusline = 100,
+            tabline = 100,
+            winbar = 100,
+          },
         },
-    },
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        lazy = true,
-        event = "BufAdd",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        config = function()
-            require("bufferline").setup {}
-        end
-    },
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        lazy = true,
-        event = "BufReadPre"
-    },
-    {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        lazy = true,
-        event = "VeryLazy",
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
-    }
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "filetype" },
+          lualine_c = {
+            {
+              "filename",
+              file_status = true,
+              newfile_status = false,
+              path = 3,
+              shorting_target = 40,
+              symbols = {
+                modified = "",
+                readonly = "",
+                unnamed = "",
+                newfile = "",
+              },
+            },
+            "diagnostics",
+          },
+          lualine_x = { "os.date('%I:%M %p')" },
+          lualine_y = { "branch" },
+          lualine_z = { "progress" },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { "filename" },
+          lualine_x = { "location" },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        extensions = { "lazy", "nvim-tree" },
+      })
+    end,
+  },
 }
