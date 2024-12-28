@@ -31,9 +31,5 @@ dynamic_padding = true
 columns = 106
 lines = 31
 
-[window.padding]
-x = 0
-y = 0
-
 [env]
 TERM = "xterm-256color"
