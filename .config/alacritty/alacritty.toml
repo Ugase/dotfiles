@@ -5,9 +5,9 @@ blinking = "On"
 size = 12.75
 
 [font.normal]
-# family = "IosevkaTerm Nerd Font"
+family = "IosevkaTerm Nerd Font"
 # family = "JetbrainsMono Nerd Font"
-family = "GohuFont 11 Nerd Font Mono"
+# family = "GohuFont 11 Nerd Font Mono"
 style = "Regular"
 
 [general]
