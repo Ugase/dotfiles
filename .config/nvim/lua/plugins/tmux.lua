@@ -1,10 +1,10 @@
 return {
-  {
-    "christopher-francisco/tmux-status.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    opts = {},
-  },
+  -- {
+  -- "christopher-francisco/tmux-status.nvim",
+  -- lazy = true,
+  -- event = "VeryLazy",
+  -- opts = {},
+  -- },
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
