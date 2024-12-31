@@ -20,11 +20,11 @@ hide_when_typing = true
 program = "/usr/bin/zsh"
 
 [window]
-blur = true
+# blur = true
 decorations = "None"
 dynamic_padding = true
 # dynamic_title = false
-opacity = 0.56
+# opacity = 0.56
 # title = "Terminal - Alacritty"
 
 [window.dimensions]
