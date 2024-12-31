@@ -17,14 +17,14 @@ import = ["/home/denzel/.config/alacritty/themes/themes/tokyo_night.toml"]
 hide_when_typing = true
 
 [terminal.shell]
-program = "/usr/bin/tmux"
+program = "/usr/bin/zsh"
 
 [window]
-# blur = true
+blur = true
 decorations = "None"
 dynamic_padding = true
 # dynamic_title = false
-# opacity = 0.75
+opacity = 0.56
 # title = "Terminal - Alacritty"
 
 [window.dimensions]

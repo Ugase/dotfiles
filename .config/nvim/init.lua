@@ -1,7 +1,5 @@
 require("config.lazy")
 
--- vim.cmd("colorscheme tokyonight")
-
 local o = vim.o
 o.tabstop = 8
 o.softtabstop = 4
@@ -11,7 +9,7 @@ o.smartindent = true
 o.smarttab = true
 o.autoindent = true
 o.expandtab = true
-
+o.undofile = true
 local function status_off()
   vim.system({ "tmux", "set", "status", "off" }, {}, function() end)
 end
