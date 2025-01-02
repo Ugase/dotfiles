@@ -15,7 +15,7 @@ ipypkg(){
         printf "\033[1;3;31mfatal: No internet\033[0m\n"
         return 1
     fi
-    pacman -Ss python- | grep "python-$1"
+    pacman -Ss python-$1
     AVALIABLE_ON_ARCH_REPO=$?
     if [[ $AVALIABLE_ON_ARCH_REPO -ne 0 ]]; then
         printf "\033[3;33mNot avaliable on the arch repos\nDownloading from pip using --break-system-packages\nif you don't want this you have 5 seconds to exit this program\033[0m\n"
@@ -26,3 +26,4 @@ ipypkg(){
         sudo pacman -S python-$1
     fi
 }
+

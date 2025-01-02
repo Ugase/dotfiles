@@ -61,6 +61,7 @@ alias edit_nvim="PREV_PWD=\"$(pwd)\" && cd ~/.config/nvim && nvim && cd $PREV_PW
 alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
 alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "
+alias cb="brightnessctl -d 'acpi_video0' set"
 
 export MANPAGER='nvim +Man!'
 # Shell integration
