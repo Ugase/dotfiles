@@ -16,7 +16,7 @@ return {
     event = "VeryLazy",
     opts = {
       ensure_installed = {
-        "pyright",
+        "basedpyright",
         "black",
         "isort",
         "ruff",

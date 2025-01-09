@@ -2,9 +2,9 @@ return {
   {
     "folke/tokyonight.nvim",
     event = "VimEnter",
-    config = function()
-      vim.cmd([[colorscheme tokyonight]])
-    end,
+    -- config = function()
+    --   vim.cmd([[colorscheme tokyonight]])
+    -- end,
     opts = {
       styles = {
         keywords = {
@@ -12,5 +12,12 @@ return {
         },
       },
     },
+  },
+  {
+    "Everblush/nvim",
+    name = "everblush",
+    config = function()
+      vim.cmd([[colorscheme everblush]])
+    end,
   },
 }

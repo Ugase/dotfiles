@@ -23,8 +23,15 @@ autoload -U compinit && compinit
 
 zinit cdreplay -q
 
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+ZSH_HIGHLIGHT_STYLES[path]='bold'
+
+# Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/config.toml)"
 
+# Like one autosuggest option here
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Keybinds
@@ -68,7 +75,7 @@ export MANPAGER='nvim +Man!'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# Source some functions
+# Source some (like two) functions
 source ~/funcs.zsh
 
 # Variables: 
