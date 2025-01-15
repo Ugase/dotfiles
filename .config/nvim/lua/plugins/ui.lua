@@ -36,7 +36,7 @@ return {
                cache_path = "/tmp/profile.nvim/", -- Cache the data of git contributions locally.
                cache_duration = 24 * 60 * 60,
             },
-            avatar_path = "/home/denzel/.config/nvim/lua/avatar.png",
+            avatar_path = "/home/denzel/dotfiles/.config/nvim/lua/avatar.png",
             format = function()
                -- render avatar
                comp:avatar()
