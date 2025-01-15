@@ -18,6 +18,8 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::man
 
+fpath+=~/.zfunc
+
 # Load completions
 autoload -U compinit && compinit
 

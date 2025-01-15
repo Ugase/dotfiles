@@ -32,3 +32,9 @@ cncd(){
     git add *
     git commit -m "Initial commit"
 }
+
+cncdl(){
+    cargo new $1 --lib && cd $1
+    git add *
+    git commit -m "Initial commit"
+}

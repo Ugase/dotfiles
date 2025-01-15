@@ -22,6 +22,7 @@ return {
     config = function()
       require("lint").linters_by_ft = {
         python = { "ruff", "mypy" },
+        rust = { "clippy" },
       }
     end,
   },

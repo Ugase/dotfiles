@@ -27,6 +27,10 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
+  ui = {
+      border = "rounded",
+      title = "lazy.nvim"
+  },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "tokyonight" } },
@@ -47,6 +51,7 @@ require("lazy").setup({
     },
   },
 })
+
 local o = vim.o
 o.tabstop = 8
 o.softtabstop = 4
@@ -57,7 +62,7 @@ o.smarttab = true
 o.autoindent = true
 o.expandtab = true
 o.undofile = true
-o.colorcolumn = "100"
+o.colorcolumn = "90"
 
 local function status_off()
   vim.system({ "tmux", "set", "status", "off" }, {}, function() end)
