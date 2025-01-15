@@ -2,9 +2,9 @@ return {
   {
     "folke/tokyonight.nvim",
     event = "VimEnter",
-    -- config = function()
-    --   vim.cmd([[colorscheme tokyonight]])
-    -- end,
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
     opts = {
       styles = {
         keywords = {
@@ -13,11 +13,21 @@ return {
       },
     },
   },
+  -- {
+  --   "Everblush/nvim",
+  --   name = "everblush",
+  --   event = "VimEnter",
+  --   config = function()
+  --     vim.cmd([[colorscheme everblush]])
+  --   end,
+  -- },
   {
-    "Everblush/nvim",
-    name = "everblush",
-    config = function()
-      vim.cmd([[colorscheme everblush]])
-    end,
+    "oxfist/night-owl.nvim",
+    event = "VimEnter",
+    -- config = function()
+    --   require("night-owl").setup()
+    --   vim.cmd.colorscheme("night-owl")
+    -- end,
   },
+  { "nvim-treesitter/nvim-treesitter", event = "VeryLazy", build = ":TSUpdate" },
 }

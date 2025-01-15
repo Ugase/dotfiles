@@ -11,4 +11,5 @@ return {
       })
     end,
   },
+  { "mistricky/codesnap.nvim", build = "make", event = "BufReadPre" },
 }

@@ -27,3 +27,8 @@ ipypkg(){
     fi
 }
 
+cncd(){
+    cargo new $1 && cd $1
+    git add *
+    git commit -m "Initial commit"
+}

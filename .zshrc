@@ -69,7 +69,8 @@ alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
 alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "
 alias cb="brightnessctl -d 'acpi_video0' set"
-
+alias nspm="git clone https://github.com/ugase/nspm && cd nspm && fd -x mv {} .. && cd .. && uv init . && uv venv && uv pip install -r requirements.txt && rm -fr nspm && source .venv/bin/activate"
+alias runc="cargo run"
 export MANPAGER='nvim +Man!'
 # Shell integration
 eval "$(fzf --zsh)"
