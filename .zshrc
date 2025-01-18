@@ -11,6 +11,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+
 # omz plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -60,26 +61,28 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Source some functions
+source ~/funcs.zsh
+
 # Aliases
 alias ls="eza -a --group-directories-first"
 alias cls='clear'
 alias c='clear'
 alias nv='nvim'
 alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
-alias edit_nvim="PREV_PWD=\"$(pwd)\" && cd ~/.config/nvim && nvim && cd $PREV_PWD"
 alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
 alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "
 alias cb="brightnessctl -d 'acpi_video0' set"
 alias nspm="git clone https://github.com/ugase/nspm && cd nspm && fd -x mv {} .. && cd .. && uv init . && uv venv && uv pip install -r requirements.txt && rm -fr nspm && source .venv/bin/activate"
 alias runc="cargo run"
+alias cdcn="cncd"
+alias cdcnl="cncdl"
+
 export MANPAGER='nvim +Man!'
 # Shell integration
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
-# Source some (like two) functions
-source ~/funcs.zsh
 
 # Variables: 
 NVIM_CFG="$HOME/.config/nvim"

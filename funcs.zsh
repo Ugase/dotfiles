@@ -38,3 +38,9 @@ cncdl(){
     git add *
     git commit -m "Initial commit"
 }
+
+edit_nvim(){
+    PREV_CWD=$PWD
+    cd ~/.config/nvim && nvim
+    cd $PREV_CWD
+}
