@@ -78,6 +78,7 @@ alias nspm="git clone https://github.com/ugase/nspm && cd nspm && fd -x mv {} ..
 alias runc="cargo run"
 alias cdcn="cncd"
 alias cdcnl="cncdl"
+alias sync_dotfiles="~/dotfiles/crontabs/dot.sh"
 
 export MANPAGER='nvim +Man!'
 # Shell integration
