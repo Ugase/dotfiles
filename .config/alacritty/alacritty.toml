@@ -5,10 +5,11 @@ blinking = "On"
 TERM = "xterm-256color"
 
 [font]
-size = 12.5
+size = 13.75
 
 [font.normal]
-family = "FiraCode Nerd Font"
+# family = "FiraCode Nerd Font"
+family = "FantasqueSansM Nerd Font"
 style = "Regular"
 
 [general]
@@ -21,6 +22,8 @@ hide_when_typing = true
 program = "/usr/bin/zsh"
 
 [window]
+opacity = 0.625
+blur = true
 decorations = "None"
 dynamic_padding = true
 

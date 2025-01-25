@@ -1,18 +1,18 @@
 return {
-   {
-      "folke/tokyonight.nvim",
-      event = "VimEnter",
-      -- config = function()
-      --   vim.cmd([[colorscheme tokyonight]])
-      -- end,
-      opts = {
-         styles = {
-            keywords = {
-               italic = false,
-            },
-         },
-      },
-   },
+   -- {
+   --    "folke/tokyonight.nvim",
+   --    event = "VimEnter",
+   --    -- config = function()
+   --    --   vim.cmd([[colorscheme tokyonight]])
+   --    -- end,
+   --    opts = {
+   --       styles = {
+   --          keywords = {
+   --             italic = false,
+   --          },
+   --       },
+   --    },
+   -- },
    -- {
    --   "Everblush/nvim",
    --   name = "everblush",
@@ -34,14 +34,23 @@ return {
       name = "catppuccin",
       event = "VimEnter",
       config = function()
+         require("catppuccin").setup({
+            transparent_background = true,
+         })
          vim.cmd([[colorscheme catppuccin-macchiato]])
       end,
    },
-   -- {
-   --    "EdenEast/nightfox.nvim",
-   --    config = function()
-   --       vim.cmd([[colorscheme nordfox]])
-   --    end,
-   -- },
+   {
+      "projekt0n/github-nvim-theme",
+      name = "github-theme",
+      event = "VimEnter",
+      priority = 1000,
+      -- config = function()
+      -- require("github-theme").setup({
+      -- options = { transparent = true },
+      -- })
+      -- vim.cmd("colorscheme github_dark")
+      -- end,
+   },
    { "nvim-treesitter/nvim-treesitter", event = "BufReadPre", build = ":TSUpdate" },
 }

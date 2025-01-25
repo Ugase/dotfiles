@@ -89,10 +89,11 @@ vim.api.nvim_create_autocmd("VimLeave", {
 
 local map = vim.keymap.set
 map("n", "<C-n>", "<cmd> NvimTreeToggle<CR>")
-map("n", "<leader>e", "<cmd> NvimTreeFocus<CR>")
+-- map("n", "<leader>e", "<cmd> NvimTreeFocus<CR>")
 map("n", "<leader>l", "<cmd> Lazy<CR>")
 map("n", "<leader>p", "<cmd> Lazy profile<CR>")
 map("n", "<leader>s", "<cmd> Lazy sync<CR>")
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename() <CR>")
-map("i", "<F2>", "<cmd>lua vim.lsp.buf.rename() <CR>")
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+map("i", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
+map("n", "<leader>qf", "<cmd>lua vim.lsp.buf.code_action()<CR>")
