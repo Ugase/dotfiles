@@ -3,7 +3,7 @@ if [[ $1 != "--debug" ]]; then
     ping -c 1 github.com > /dev/null 2>&1
     INTERNET=$?
     cd ~/dotfiles
-    stow --adopt --no-folding .
+    stow --adopt .
     git add . && git commit -m "$(git status --short)"
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master
@@ -23,7 +23,7 @@ else
     echo "${INTERNET}" >>"${FILE_PATH}"
     cd ~/dotfiles
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
-    stow --adopt --no-folding . >>$FILE_PATH
+    stow --adopt . >>$FILE_PATH
     git add . >>$FILE_PATH && git commit -m "$(git status --short)" >>$FILE_PATH
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master >>$FILE_PATH 2>&1
