@@ -1,0 +1,12 @@
+{
+    "String::from": {
+        "prefix": "stf",
+        "body": [
+            "String::from(\"${1:here}\")"
+        ],
+        "luasnip": {
+	    "priority": 2000,
+	    "autotrigger": true
+	}
+    }
+}
