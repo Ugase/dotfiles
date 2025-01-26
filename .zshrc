@@ -7,8 +7,7 @@ fi
 # echo "After if clause"
 
 source "${ZINIT_HOME}/zinit.zsh"
-# echo "Sourced zinit"
-
+eval "$(fzf --zsh)"
 # zsh plugins
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice blockf
@@ -77,7 +76,7 @@ source ~/alias.zsh
 export MANPAGER='nvim +Man!'
 # echo "man"
 # Shell integration
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 # echo "fzf and zoxide"
 # Variables: 
