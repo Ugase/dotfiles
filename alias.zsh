@@ -1,0 +1,14 @@
+alias ls="eza -a --group-directories-first"
+alias cls='clear'
+alias c='clear'
+alias nv='nvim'
+alias edit_zsh="nvim ~/.zshrc && source ~/.zshrc"
+alias edit_alacritty="nvim ~/.config/alacritty/alacritty.toml"
+alias vn="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs nvim"
+alias v="fd --type f --hidden --exclude .git --follow | fzf-tmux -w 60% -h 60% -p --reverse | xargs "
+alias cb="brightnessctl -d 'acpi_video0' set"
+alias nspm="git clone https://github.com/ugase/nspm && cd nspm && fd -x mv {} .. && cd .. && uv init . && uv venv && uv pip install -r requirements.txt && rm -fr nspm && source .venv/bin/activate"
+alias runrs="cargo run"
+alias cdcn="cncd"
+alias cdcnl="cncdl"
+alias sync_dotfiles="~/dotfiles/crontabs/dot.sh"

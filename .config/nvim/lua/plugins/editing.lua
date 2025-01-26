@@ -31,13 +31,6 @@ return {
          })
       end,
    },
-   -- {
-   --    "lukas-reineke/indent-blankline.nvim",
-   --    event = "BufReadPre",
-   --    config = function()
-   --       require("ibl").setup()
-   --    end,
-   -- },
    {
       "nvim-telescope/telescope.nvim",
       tag = "0.1.8",
