@@ -37,7 +37,7 @@ else
     cd ~/dotfiles
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
     sync_nvim_config_debug $FILE_PATH
-    stow --adopt --verbose=4 . >>$FILE_PATH
+    stow --adopt --verbose=4 . >>$FILE_PATH 2>&1
     git add . >>$FILE_PATH && git commit -m "$(git status --short)" >>$FILE_PATH
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master >>$FILE_PATH 2>&1
