@@ -1,9 +1,22 @@
+sync_nvim_config() {
+    cd ~/dotfiles/.config
+    cp -rv ~/.config/nvim .
+    cd ~/dotfiles
+}
+
+sync_nvim_config_debug() {
+    cd ~/dotfiles/.config
+    cp -rv ~/.config/nvim . >>$1 2>&1
+    cd ~/dotfiles
+}
+
 if [[ $1 != "--debug" ]]; then
   if [[ -n "$(git status --short)" ]]; then
     ping -c 1 github.com > /dev/null 2>&1
     INTERNET=$?
     cd ~/dotfiles
-    stow --adopt .
+    sync_nvim_config
+    stow --adopt --verbose=2 .
     git add . && git commit -m "$(git status --short)"
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master
@@ -23,7 +36,8 @@ else
     echo "${INTERNET}" >>"${FILE_PATH}"
     cd ~/dotfiles
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
-    stow --adopt . >>$FILE_PATH
+    sync_nvim_config_debug $FILE_PATH
+    stow --adopt --verbose=4 . >>$FILE_PATH
     git add . >>$FILE_PATH && git commit -m "$(git status --short)" >>$FILE_PATH
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master >>$FILE_PATH 2>&1
