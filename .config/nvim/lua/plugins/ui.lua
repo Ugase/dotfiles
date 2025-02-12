@@ -1,35 +1,37 @@
 return {
-   {
-      "echasnovski/mini.starter",
-      version = false,
-      event = "VimEnter",
-      config = function()
-         require("mini.starter").setup({
-            query_updaters = "",
-            footer = "\n",
-            header = "\n                                    oo            \n                                                  \n88d888b. .d8888b. .d8888b. dP   .dP dP 88d8b.d8b. \n88'  `88 88ooood8 88'  `88 88   d8' 88 88'`88'`88 \n88    88 88.  ... 88.  .88 88 .88'  88 88  88  88 \ndP    dP `88888P' `88888P' 8888P'   dP dP  dP  dP \n                                                  \n",
-         })
-      end,
-   },
-   {
-      "stevearc/dressing.nvim",
-      event = "VimEnter",
-      opts = {},
-   },
-   {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      opts = {
-         preset = "modern",
-      },
-      keys = {
-         {
-            "<leader>?",
-            function()
-               require("which-key").show({ global = false })
-            end,
-            desc = "Buffer Local Keymaps (which-key)",
-         },
-      },
-   },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      timeout = 1,
+      maxkeys = 3,
+      position = "top-right",
+    },
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+  {
+    "nvchad/ui",
+    event = "VeryLazy",
+  },
 }

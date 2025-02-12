@@ -1,66 +1,80 @@
 return {
-   {
-      "saghen/blink.cmp",
-      dependencies = {
-         "L3MON4D3/LuaSnip",
-         version = "v2.*",
-         dependencies = { "rafamadriz/friendly-snippets" },
-         event = "BufReadPre",
-         config = function()
-            require("luasnip.loaders.from_vscode").lazy_load({
-               paths = { "/home/denzel/.config/nvim/snippets" },
-            })
-         end,
-      },
-      event = "VeryLazy",
-      version = "*",
+    {
+        "saghen/blink.cmp",
+        dependencies = {
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+            dependencies = { "rafamadriz/friendly-snippets" },
+            event = "BufReadPre",
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load({
+                    paths = { "/home/denzel/.config/nvim/snippets" },
+                })
+            end,
+        },
+        event = "BufReadPre",
+        version = "*",
 
-      ---@module 'blink.cmp'
-      ---@type blink.cmp.Config
-      opts = {
-         snippets = { preset = "luasnip" },
-         keymap = {
-            ["<C-s>"] = { "show", "hide" },
-            ["<C-q>"] = { "show_documentation", "hide_documentation" },
-            ["<C-e>"] = { "hide", "fallback" },
-            ["<Tab>"] = {
-               function(cmp)
-                  if cmp.snippet_active() then
-                     return cmp.accept()
-                  else
-                     return cmp.select_and_accept()
-                  end
-               end,
-               "snippet_forward",
-               "fallback",
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            snippets = { preset = "luasnip" },
+            keymap = {
+                ["<C-s>"] = { "show", "hide" },
+                ["<C-q>"] = { "show_documentation", "hide_documentation" },
+                ["<C-e>"] = { "hide", "fallback" },
+                ["<Tab>"] = {
+                    function(cmp)
+                        if cmp.snippet_active() then
+                            return cmp.accept()
+                        else
+                            return cmp.select_and_accept()
+                        end
+                    end,
+                    "snippet_forward",
+                    "fallback",
+                },
+                ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+                ["<C-p>"] = { "select_prev", "fallback" },
+                ["<C-n>"] = { "select_next", "fallback" },
+
+                ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+                ["<C-f>"] = { "scroll_documentation_down", "fallback" },
             },
-            ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-            ["<C-p>"] = { "select_prev", "fallback" },
-            ["<C-n>"] = { "select_next", "fallback" },
-
-            ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-            ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-         },
-
-         appearance = {
-            use_nvim_cmp_as_default = true,
-            nerd_font_variant = "normal",
-         },
-         completion = {
-            documentation = {
-               auto_show = true,
-               auto_show_delay_ms = 500,
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = "normal",
             },
-         },
-         signature = { enabled = true, window = {
-            min_width = 80,
-         } },
-
-         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
-         },
-      },
-      opts_extend = { "sources.default" },
-   },
+            completion = {
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 500,
+                    window = {
+                        border = "rounded",
+                    },
+                },
+                menu = {
+                    border = "rounded",
+                    draw = {
+                        columns = {
+                            { "kind_icon", "label", gap = 1 },
+                            { "kind" },
+                        },
+                    },
+                },
+            },
+            signature = {
+                enabled = true,
+                window = {
+                    border = "rounded",
+                },
+            },
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+            },
+        },
+        opts_extend = { "sources.default" },
+    },
 }
