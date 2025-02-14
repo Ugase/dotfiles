@@ -17,7 +17,9 @@ if [[ $1 != "--debug" ]]; then
     cd ~/dotfiles
     sync_nvim_config
     stow --adopt --verbose=2 .
-    git add . && git commit -m "$(git status --short)"
+    printf "Message: "
+    read message
+    git add . && git commit -m "$message"
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master
     else
@@ -38,7 +40,9 @@ else
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
     sync_nvim_config_debug $FILE_PATH
     stow --adopt --verbose=3 . >>$FILE_PATH 2>&1
-    git add . >>$FILE_PATH && git commit -m "$(git status --short)" >>$FILE_PATH
+    printf "Message: "
+    read message
+    git add . >>$FILE_PATH && git commit -m "$message" >>$FILE_PATH
     if [[ $INTERNET -eq 0 ]]; then
       git push origin master >>$FILE_PATH 2>&1
     else
