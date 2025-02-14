@@ -16,7 +16,7 @@ if [[ $1 != "--debug" ]]; then
     INTERNET=$?
     cd ~/dotfiles
     sync_nvim_config
-    stow --adopt --verbose=2 .
+    stow --adopt --verbose .
     printf "Message: "
     read message
     git add . && git commit -m "$message"
