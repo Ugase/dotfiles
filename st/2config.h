@@ -3,30 +3,29 @@ static char *font = "FantasqueSansM Nerd Font:size=13.75:antialias=true:autohint
 
 /* Catppucchin */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#45475A",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#BAC2DE",
+    /* 8 normal colors */
+    "#45475A",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#F5C2E7",
+    "#94E2D5",
+    "#BAC2DE",
 
-	/* 8 bright colors */
-	"#585B70",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#A6ADC8",
+    /* 8 bright colors */
+    "#585B70",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#F5C2E7",
+    "#94E2D5",
+    "#A6ADC8",
 
-[256] = "#CDD6F4", /* default foreground colour */
-[257] = "#1E1E2E", /* default background colour */
-[258] = "#F5E0DC", /*575268*/
-
+    [256] = "#CDD6F4", /* default foreground colour */
+    [257] = "#1E1E2E", /* default background colour */
+    [258] = "#F5E0DC", /*575268*/
 };
 
 
@@ -37,8 +36,7 @@ unsigned int defaultfg = 256;
 unsigned int defaultbg = 257;
 unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
-/* See LICENSE file for copyright and license details. */
-
+float alpha = 0.65;
 /*
  * appearance
  *
@@ -130,10 +128,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-
-
-
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -176,6 +170,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
+	{ XK_NO_MOD,            Button4, kscrollup,      {.i = 3} },
+	{ XK_NO_MOD,            Button5, kscrolldown,    {.i = 3} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -201,6 +197,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
