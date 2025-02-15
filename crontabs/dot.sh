@@ -35,7 +35,7 @@ else
     echo "Made ${FILE_PATH}"
     ping -c 1 github.com >>"${FILE_PATH}"
     INTERNET=$?
-    echo "${INTERNET}" >>"${FILE_PATH}"
+    echo "Error code of ping: ${INTERNET}" >>"${FILE_PATH}"
     cd ~/dotfiles
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
     sync_nvim_config_debug $FILE_PATH
