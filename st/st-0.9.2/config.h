@@ -1,9 +1,7 @@
 static char *shell = "/usr/bin/zsh";
 static char *font = "FantasqueSansM Nerd Font:size=13.75:antialias=true:autohint:true";
 
-// Catppucchin
-/* Terminal colors (16 first used in escape sequence) */
-/* Terminal colors (16 first used in escape sequence) */
+/* Catppucchin */
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#45475A",
@@ -39,8 +37,6 @@ unsigned int defaultfg = 256;
 unsigned int defaultbg = 257;
 unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
-/* See LICENSE file for copyright and license details. */
-
 /*
  * appearance
  *
@@ -132,10 +128,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-
-
-
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -178,6 +170,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
+	{ XK_NO_MOD,            Button4, kscrollup,      {.i = 1} },
+	{ XK_NO_MOD,            Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -203,6 +197,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
