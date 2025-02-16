@@ -1,5 +1,5 @@
 static char *shell = "/usr/bin/zsh";
-static char *font = "FantasqueSansM Nerd Font:size=13.75:antialias=true:autohint:true";
+static char *font = "FantasqueSansM Nerd Font:size=13.75:antialias=true:autohint=true";
 
 /* Catppucchin */
 static const char *colorname[] = {
@@ -37,7 +37,7 @@ unsigned int defaultfg = 256;
 unsigned int defaultbg = 257;
 unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
-float alpha = 1;
+float alpha = 0.65;
 /*
  * appearance
  *
@@ -62,7 +62,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
+static float cwscale = 0.92;
 static float chscale = 1.0;
 
 /*

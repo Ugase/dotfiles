@@ -818,6 +818,10 @@ xloadcols(void)
 	/* set alpha value of bg color */
 	if (opt_alpha)
 		alpha = strtof(opt_alpha, NULL);
+        /* from https://www.reddit.com/r/suckless/comments/xrz5vk/comment/iqkz577 */
+        dc.col[defaultbg].color.red *= alpha;
+        dc.col[defaultbg].color.green *= alpha;
+        dc.col[defaultbg].color.blue *= alpha;
 	dc.col[defaultbg].color.alpha = (unsigned short)(0xffff * alpha);
 	dc.col[defaultbg].pixel &= 0x00FFFFFF;
 	dc.col[defaultbg].pixel |= (unsigned char)(0xff * alpha) << 24;
