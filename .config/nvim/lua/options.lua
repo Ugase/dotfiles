@@ -1,9 +1,5 @@
-require "nvchad.options"
-
--- add yours here!
-
 local o = vim.o
-o.cursorlineopt ='both' -- to enable cursorline!
+o.cursorlineopt = "both"
 o.tabstop = 8
 o.softtabstop = 4
 o.shiftwidth = 4
@@ -16,4 +12,5 @@ o.expandtab = true
 o.undofile = true
 o.colorcolumn = "90"
 o.clipboard = "unnamedplus"
-
+o.termguicolors = true
+o.mousemoveevent = true

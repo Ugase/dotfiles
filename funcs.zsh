@@ -28,13 +28,13 @@ ipypkg(){
 }
 
 cncd(){
-    cargo new $1 && cd $1
+    cargo new --vcs=git $1 && cd $1
     git add *
     git commit -m "Initial commit"
 }
 
 cncdl(){
-    cargo new $1 --lib && cd $1
+    cargo new --vcs=git $1 --lib && cd $1
     git add *
     git commit -m "Initial commit"
 }
@@ -43,4 +43,8 @@ edit_nvim(){
     PREV_CWD=$PWD
     cd ~/.config/nvim && nvim
     cd $PREV_CWD
+}
+
+machine(){
+    alias machine="/bin/echo \"grep -Eo \"\^\[01\]+\" | fold -w8 | while read -r byte; do /bin/printf '\\x%02x' \"0\"; done | /bin/echo -ne \"\$\(cat\)\" > b.bin\" | wl-copy"
 }

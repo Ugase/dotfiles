@@ -1,21 +1,8 @@
-sync_nvim_config() {
-    cd ~/dotfiles/.config
-    cp -rv ~/.config/nvim .
-    cd ~/dotfiles
-}
-
-sync_nvim_config_debug() {
-    cd ~/dotfiles/.config
-    cp -rv ~/.config/nvim . >>$1 2>&1
-    cd ~/dotfiles
-}
-
 if [[ $1 != "--debug" ]]; then
   if [[ -n "$(git status --short)" ]]; then
     ping -c 1 github.com > /dev/null 2>&1
     INTERNET=$?
     cd ~/dotfiles
-    sync_nvim_config
     stow --adopt --verbose .
     printf "Message: "
     read message
@@ -38,7 +25,6 @@ else
     echo "Error code of ping: ${INTERNET}" >>"${FILE_PATH}"
     cd ~/dotfiles
     echo "changed directory to ~/dotfiles" >>$FILE_PATH
-    sync_nvim_config_debug $FILE_PATH
     stow --adopt --verbose=3 . >>$FILE_PATH 2>&1
     printf "Message: "
     read message

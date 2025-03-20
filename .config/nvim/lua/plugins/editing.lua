@@ -1,75 +1,34 @@
 return {
-    {
-        "mfussenegger/nvim-dap",
-        cmd = {
-            "DapToggleBreakpoint",
-            "DapNew",
-        },
-        config = function()
-            require("dapui").setup()
-            local dap = require("dap")
-            local dapui = require("dapui")
-            local map = vim.keymap.set
-            dap.listeners.before.attach.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                dapui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                dapui.close()
-            end
-            dap.adapters.gdb = {
-                type = "executable",
-                command = "/usr/bin/gdb",
-                name = "gdb",
-            }
-            dap.configurations.rust = {
-                name = "Launch",
-                type = "gdb",
-                request = "launch",
-                program = function()
-                    return vim.fn.input(
-                        "Path to executable: ",
-                        vim.fn.getcwd() .. "/",
-                        "file"
-                    )
-                end,
-                cwd = "${workspaceFolder}",
-                stopOnEntry = false,
-                args = {},
-            }
-            map("n", "<leader>dt", "<cmd>DapToggleBreakpoint<cr>")
-            map("n", "<leader>dx", "<cmd>DapTerminate<cr>")
-            map("n", "<leader>do", "<cmd>DapStepOver<cr>")
-        end,
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    opts = {
+      formatters_by_ft = {
+        python = { "isort", "black" },
+        lua = { "stylua" },
+      },
+      format_on_save = {
+        timeout_ms = 5000,
+        lsp_format = "fallback",
+      },
     },
-    {
-        "rcarriga/nvim-dap-ui",
-        cmd = {
-            "DapToggleBreakpoint",
-            "DapNew",
-        },
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-    },
-    {
-        "christoomey/vim-tmux-navigator",
-        cmd = {
-            "TmuxNavigateLeft",
-            "TmuxNavigateDown",
-            "TmuxNavigateUp",
-            "TmuxNavigateRight",
-            "TmuxNavigatePrevious",
-        },
-        keys = {
-            { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-        },
-    },
+  },
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+    event = "VeryLazy",
+    config = function()
+      require("mini.pairs").setup()
+    end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = "BufReadPost",
+    config = function()
+      require("lint").linters_by_ft = {
+        python = { "ruff", "mypy" },
+        lua = { "selene" },
+      }
+    end,
+  },
 }
