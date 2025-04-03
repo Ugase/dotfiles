@@ -16,7 +16,7 @@ return {
   {
     "echasnovski/mini.nvim",
     version = false,
-    event = "VeryLazy",
+    event = "InsertEnter",
     config = function()
       require("mini.pairs").setup()
     end,

@@ -46,5 +46,5 @@ edit_nvim(){
 }
 
 machine(){
-    alias machine="/bin/echo \"grep -Eo \"\^\[01\]+\" | fold -w8 | while read -r byte; do /bin/printf '\\x%02x' \"0\"; done | /bin/echo -ne \"\$\(cat\)\" > b.bin\" | wl-copy"
+    bash -c "grep -Eo \"^[01]+\" $1 | fold -w8 | while read -r byte; do /bin/printf '\\\\x%02x' \"\$((2#\$byte))\"; done | /bin/echo -ne \"\$(cat)\" > $1.bin"
 }

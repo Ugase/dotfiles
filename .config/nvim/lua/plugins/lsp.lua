@@ -2,19 +2,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = "BufReadPost",
-    config = function()
-      -- require("lspconfig").bacon_ls.setup({
-      --   init_options = {
-      --     updateOnSaveWaitMillis = 3000,
-      --   },
-      --   ft = "rust",
-      -- })
-    end,
   },
   {
     "mrcjkb/rustaceanvim",
     version = "^5",
-    lazy = false,
+    ft = "rust",
     keys = {
       {
         "<leader>rfc",

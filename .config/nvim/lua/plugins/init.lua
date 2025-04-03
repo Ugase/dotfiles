@@ -1,13 +1,5 @@
 return {
   {
-    "folke/tokyonight.nvim",
-    priority = 1000,
-    -- event = "vimenter",
-    config = function()
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -17,7 +9,7 @@ return {
         custom_highlights = function(colors)
           return {
             Pmenu = { bg = colors.none },
-            NoiceCmdlinePopupBorder = { fg = colors.none },
+            LspInlayHint = { bg = colors.none },
           }
         end,
         integrations = {
@@ -26,6 +18,15 @@ return {
           fidget = true,
           notify = true,
           cmp = false,
+          native_lsp = {
+            enabled = true,
+            underlines = {
+              errors = { "undercurl" },
+              hints = { "undercurl" },
+              warnings = { "undercurl" },
+              information = { "undercurl" },
+            },
+          },
         },
         dim_inactive = {
           enabled = true,
@@ -33,7 +34,7 @@ return {
         },
         transparent_background = false,
       })
-      vim.cmd([[colorscheme catppuccin-macchiato]])
+      vim.cmd([[colorscheme catppuccin-mocha]])
     end,
   },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = "BufReadPost" },

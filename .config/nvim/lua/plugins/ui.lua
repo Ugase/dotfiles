@@ -53,10 +53,17 @@ return {
         options = {
           icons_enabled = true,
           disabled_filetypes = {
-            statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" },
+            statusline = {
+              "dashboard",
+              "alpha",
+              "ministarter",
+              "snacks_dashboard",
+              "lazy",
+              "nvim-tree",
+            },
           },
           component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          section_separators = { left = " ", right = "" },
           ignore_focus = {},
           always_divide_middle = false,
           always_show_tabline = true,
@@ -69,7 +76,14 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = {
+          lualine_b = {},
+          lualine_c = {
+            {
+              "filetype",
+              icon_only = true,
+              separator = "",
+              padding = { left = 0, right = 0 },
+            },
             {
               "filename",
               file_status = true,
@@ -82,11 +96,18 @@ return {
                 unnamed = "",
                 newfile = "",
               },
+              padding = { left = 1, right = 1 },
             },
-          },
-          lualine_c = {
+
             "diagnostics",
             "branch",
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg == "" then
+                return reg
+              end
+              return "recording @" .. reg
+            end,
           },
           lualine_x = {
             "filetype",
@@ -107,7 +128,6 @@ return {
           lualine_y = {},
           lualine_z = {},
         },
-        extensions = { "lazy", "nvim-tree" },
       })
     end,
   },
@@ -119,7 +139,8 @@ return {
     config = function()
       require("bufferline").setup({
         options = {
-          seperator_style = "slope",
+          separator_style = "slant",
+          diagnostics = "nvim_lsp",
         },
       })
     end,
@@ -127,7 +148,7 @@ return {
   {
     "j-hui/fidget.nvim",
     tag = "v1.0.0",
-    event = "VeryLazy",
+    event = "BufReadPost",
     opts = {
       progress = {
         ignore_empty_message = true,
@@ -176,49 +197,6 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    },
-  },
-  {
-    "catgoose/nvim-colorizer.lua",
-    event = "BufReadPre",
-    opts = {
-      lazy_load = true,
-      user_default_options = {
-        mode = "virtualtext",
-        virtualtext = "",
-        virtualtext_inline = "before",
-      },
-    },
-  },
-  {
-    {
-      "Bekaboo/dropbar.nvim",
-      event = "BufReadPost",
-      dependencies = {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-      },
-      config = function()
-        local dropbar_api = require("dropbar.api")
-        vim.keymap.set(
-          "n",
-          "<Leader>;",
-          dropbar_api.pick,
-          { desc = "Pick symbols in winbar" }
-        )
-        vim.keymap.set(
-          "n",
-          "[;",
-          dropbar_api.goto_context_start,
-          { desc = "Go to start of current context" }
-        )
-        vim.keymap.set(
-          "n",
-          "];",
-          dropbar_api.select_next_context,
-          { desc = "Select next context" }
-        )
-      end,
     },
   },
 }

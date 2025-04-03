@@ -69,20 +69,29 @@ require("lazy").setup({
         "ftplugin",
       },
     },
-    -- Configure any other settings here. See the documentation for more details.
-    -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "catppuccin" } },
-    -- automatically check for plugin updates
-    checker = { enabled = true },
+  },
+  install = { colorscheme = { "catppuccin" } },
+  checker = { enabled = true },
+  ui = {
+    border = "rounded",
+    title = "lazy.nvim",
   },
 })
+
+-- Rustaceanvim config
 vim.g.rustaceanvim = {
+  ra_multiplex = { enable = true },
   server = {
+    on_attach = function(client, bufnr)
+      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end,
     settings = {
       ["rust-analyzer"] = {
         cargo = { allFeatures = true },
-        check_on_save = false,
-        diagnostics = { enable = false },
+        editing = { formatOnType = true },
+        inlayHints = {
+          closureReturnTypeHints = { enable = true },
+        },
       },
     },
   },
