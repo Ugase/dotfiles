@@ -1,18 +1,19 @@
 [cursor.style]
 blinking = "On"
+shape = "Beam"
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 12.5
+size = 12.75
 
 [font.normal]
-family = "FiraMono Nerd Font"
+family = "Hack Nerd Font"
 style = "Medium"
 
 [general]
-import = ["/home/denzel/.config/alacritty/themes/themes/catppuccin_macchiato.toml"]
+import = ["/home/denzel/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
 
 [mouse]
 hide_when_typing = true
@@ -28,3 +29,7 @@ decorations = "None"
 [window.dimensions]
 columns = 106
 lines = 31
+
+[window.padding]
+x = 2
+y = 2

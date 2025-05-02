@@ -72,10 +72,6 @@ require("lazy").setup({
   },
   install = { colorscheme = { "catppuccin" } },
   checker = { enabled = true },
-  ui = {
-    border = "rounded",
-    title = "lazy.nvim",
-  },
 })
 
 -- Rustaceanvim config

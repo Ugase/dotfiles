@@ -48,3 +48,10 @@ edit_nvim(){
 machine(){
     bash -c "grep -Eo \"^[01]+\" $1 | fold -w8 | while read -r byte; do /bin/printf '\\\\x%02x' \"\$((2#\$byte))\"; done | /bin/echo -ne \"\$(cat)\" > $1.bin"
 }
+
+get_font(){
+    FONT=$(find_font)
+    printf "Font size: " >&2
+    read -r SIZE
+    printf "font=$(echo $FONT):size=$(echo $SIZE)\n"
+}

@@ -13,5 +13,5 @@ alias cdcn="cncd"
 alias cdcnl="cncdl"
 alias sync_dotfiles="~/dotfiles/crontabs/dot.sh"
 # from https://codeberg.org/dnkl/foot/src/branch/master/completions/zsh/_foot
-alias find_font="fc-list : family | sed 's/,/\n/g' | sort | uniq | fzf --cycle | xargs wl-copy"
-
+alias find_font="fc-list : family | sed 's/,/\n/g' | sort | uniq | fzf --cycle"
+alias ll="ls -l"

@@ -9,7 +9,8 @@ return {
     input = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
-    indent = { enabled = true, animate = { enabled = false } },
+    -- indent = { enabled = true, animate = { enabled = false } },
+    notify = { enabled = true },
   },
   keys = {
     {
@@ -88,6 +89,7 @@ return {
         Snacks.toggle.diagnostics():map("<leader>ud")
         Snacks.toggle.line_number():map("<leader>ul")
         Snacks.toggle.indent():map("<leader>ug")
+        Snacks.toggle.inlay_hints():map("<leader>uh")
       end,
     })
   end,
