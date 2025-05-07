@@ -11,7 +11,6 @@ return {
           PmenuSel = { fg = colors.none, bold = false },
           BlinkCmpSignatureHelp = { bg = colors.none, fg = colors.none },
           LspInlayHint = { bg = colors.none },
-          BlinkCmpLabelMatch = { fg = colors.none },
         }
       end,
       integrations = {

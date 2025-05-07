@@ -39,14 +39,13 @@ return {
             path = 0,
             shorting_target = 40,
             symbols = {
-              modified = "",
-              readonly = "",
-              unnamed = "",
-              newfile = "",
+              modified = "[+]",
+              readonly = "[RO]",
+              unnamed = "?",
+              newfile = "[New]",
             },
           },
-          --
-          "diagnostics",
+          { "diagnostics", symbols = { error = "E", warn = "W", info = "I", hint = "H" } },
           "branch",
           function()
             local reg = vim.fn.reg_recording()

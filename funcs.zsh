@@ -55,3 +55,12 @@ get_font(){
     read -r SIZE
     printf "font=$(echo $FONT):size=$(echo $SIZE)\n"
 }
+
+copy_symlink(){
+    TMP_DIR="tmp_$(date +%s)"
+    mkdir $TMP_DIR
+    cp -L $1 $TMP_DIR
+    rm $1
+    mv $TMP_DIR/$1 .
+    rm -rf $TMP_DIR
+}

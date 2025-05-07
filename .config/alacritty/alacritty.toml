@@ -1,16 +1,16 @@
 [cursor.style]
 blinking = "On"
-shape = "Beam"
+shape = "Block"
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 12.75
+size = 11.3
 
 [font.normal]
-family = "Hack Nerd Font"
-style = "Medium"
+family = "JetBrainsMono NF"
+style = "SemiBold"
 
 [general]
 import = ["/home/denzel/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
@@ -25,11 +25,12 @@ program = "/usr/bin/zsh"
 opacity = 0.65
 blur = true
 decorations = "None"
+dynamic_padding = true
 
 [window.dimensions]
 columns = 106
 lines = 31
 
 [window.padding]
-x = 2
-y = 2
+# x = 3
+# y = 3
