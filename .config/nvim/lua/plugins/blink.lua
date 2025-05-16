@@ -1,6 +1,8 @@
 return {
   "saghen/blink.cmp",
   event = { "InsertEnter", "CmdlineEnter" },
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
     keymap = {
       ["<C-s>"] = { "show", "hide" },
@@ -22,6 +24,11 @@ return {
       ["<C-n>"] = { "select_next", "fallback" },
       ["<C-b>"] = { "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+    },
+    term = {
+      sources = { "term" },
+      enabled = true,
+      completion = { menu = { auto_show = true } },
     },
     appearance = {
       use_nvim_cmp_as_default = true,
@@ -103,9 +110,19 @@ return {
     cmdline = {
       enabled = true,
       keymap = { preset = "inherit" },
-      completion = { ghost_text = { enabled = false } },
+      completion = { ghost_text = { enabled = false }, menu = { auto_show = true } },
     },
-    sources = { default = { "lsp", "path", "snippets", "buffer" } },
+    sources = {
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      providers = {
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
+        },
+      },
+    },
   },
   version = "*",
   opts_extend = { "sources.default" },

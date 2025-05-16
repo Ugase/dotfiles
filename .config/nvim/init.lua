@@ -92,4 +92,5 @@ vim.g.rustaceanvim = {
     },
   },
 }
+
 require("mappings")

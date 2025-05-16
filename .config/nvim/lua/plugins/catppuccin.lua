@@ -8,7 +8,8 @@ return {
       custom_highlights = function(colors)
         return {
           Pmenu = { bg = colors.none, fg = colors.none },
-          PmenuSel = { fg = colors.none, bold = false },
+          BlinkCmpLabelMatch = { bg = colors.none, fg = colors.none, bold = true },
+          PmenuSel = { fg = colors.none, bold = true },
           BlinkCmpSignatureHelp = { bg = colors.none, fg = colors.none },
           LspInlayHint = { bg = colors.none },
         }

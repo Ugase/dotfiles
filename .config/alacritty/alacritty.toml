@@ -10,6 +10,7 @@ size = 11.3
 
 [font.normal]
 family = "JetBrainsMono NF"
+# family = "CaskaydiaCove NF"
 style = "SemiBold"
 
 [general]
