@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local api = vim.api
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<C-n>", "<cmd> NvimTreeToggle<CR>")
@@ -16,3 +17,14 @@ map("n", "<C-.>", "<cmd>bn<CR>")
 map("n", "<C-s>", "<cmd>bd<CR>")
 map("n", "<C-h>", "<cmd>bp<CR>")
 map("n", "<C-l>", "<cmd>bn<CR>")
+
+map("n", "<leader>t", function()
+  local buffer_id = api.nvim_create_buf(false, false)
+  local gheight = vim.api.nvim_list_uis()[1].height
+  api.nvim_open_win(buffer_id, true, {
+    split = "below",
+    height = gheight / 3,
+  })
+  local term = vim.fn.jobstart("zsh", { term = true })
+  vim.cmd("startinsert")
+end)
